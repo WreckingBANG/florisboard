@@ -37,8 +37,8 @@ jobs:
       - name: Build with Gradle
         # MUST call gradlew separately because of an OSS license plugin issue.
         # See https://github.com/google/play-services-plugins/issues/199
-        run: ./gradlew clean && ./gradlew assembleDebug
+        run: ./gradlew clean && ./gradlew assembleRelease
       - uses: actions/upload-artifact@v3
         with:
-          name: app-debug.apk
-          path: app/build/outputs/apk/debug/app-debug.apk
+          name: app-release-unsigned.apk
+          path: app/build/outputs/apk/release/app-release-unsigned.apk
